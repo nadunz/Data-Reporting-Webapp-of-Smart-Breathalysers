@@ -33,3 +33,6 @@ Backend server and front end web application for reporting statistics of issued 
  If you want to seed some data to database,
   - Start `MongoDB` server
   - Then run `node cases_seeder.js` @ seed folder
+  
+## Google API Key
+   - You have to get `Google Map API Key` & use it to 32 line index.js @ route folder
