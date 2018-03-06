@@ -28,7 +28,7 @@ router.get('/caseFor', function(req, res,next) {
   var alco = req.query.alco;
   var lat = req.query.lat;
   var lng = req.query.lng;
-  var url = "https://maps.googleapis.com/maps/api/geocode/json?latlng="+lat+","+lng+"&key=YOUR_API_KEY;
+  var url = "https://maps.googleapis.com/maps/api/geocode/json?latlng="+lat+","+lng+"&key=YOUR_API_KEY";
   request(url, function(error, response, body) {
 
     var jsonContent = JSON.parse(body);
