@@ -10,7 +10,7 @@ A web app is also integrated to access, organize and analyse data in the remote 
 
 ## Web-app Preview
 
-### On windows :
+## On windows :
 
     - Install `NodeJS`
     - Install `npm` and `npm install express-generator -g` to install express generator
