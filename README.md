@@ -1,6 +1,6 @@
 # Smart-Breathalyser 1.0
 
-##Synopsis
+## Synopsis
 
 Smart Breathalyzer 1.0 is a project which is mainly targeted for the Police Department in Sri Lanka. Until now they use conventional balloon test to identify drunk drivers. Providing an easy, efficient and more secure IOT based solution to replace old conventional method our aim is to reduce vehicle accidents caused by drunken drivers and on the other hand uplift the productivity and reliability of police department.
 
