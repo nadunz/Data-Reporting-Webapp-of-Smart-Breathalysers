@@ -10,8 +10,7 @@ A web app is also integrated to access, organize and analyse data in the remote 
 
 ## Web-app Preview
 
-## On windows :
-
+ ## On windows :
     - Install `NodeJS`
     - Install `npm` and `npm install express-generator -g` to install express generator
     - Download all the files & go to webapp directory
@@ -19,22 +18,22 @@ A web app is also integrated to access, organize and analyse data in the remote 
     - Then, type `set DEBUG=webapp:* & npm start`
     - Check `http://localhost:3000` in your browser
     
-   #### Additional For npm :
+   ## Additional For npm :
      - `npm --save install mongoose` in to webapp directory
      - `npm --save install request` in to webapp directory
     
 ## Database
 
-  ### MongoDB :
+  ## MongoDB :
     - Install `MongoDB`
     - Create Database `breathalyzer_db` on MongoDB
     
 ## Running
    - Start `MongoDB` server {command : `mongod` }
    - Start our app server {command : `npm start` @ webapp directory}
-   #### To See Data
+   ## To See Data
     - check `localhost:3000`
-   #### To Store Data (by parameter parsing)
+   ## To Store Data (by parameter parsing)
     - Hit on the browser `localhost:3000/caseFor?nic=930272645v&veh=86465&alco=85.5&lat=7.2906&lng=80.6337`
 
 ## Data Seeding
