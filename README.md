@@ -1,5 +1,10 @@
-# Data-Reporting-Webapp-of-Smart-Breathalyser
-Backend server and front end web application for reporting statistics of issued data from smart-breathalysers
+# Smart-Breathalyser 1.0
+
+Smart Breathalyzer 1.0 is a project which is mainly targeted for the Police Department in Sri Lanka. Until now they use conventional balloon test to identify drunk drivers. Providing an easy, efficient and more secure IOT based solution to replace old conventional method our aim is to reduce vehicle accidents caused by drunken drivers.
+
+It is a device that can communicate with a remote server sending Alcohol level, Vehicle number and Driver licenseID. This device has its own unique id registered in the server. Once the police officer checks a driver and breath alcohol level is over the limit device will automatically prompt to enter Vehicle Number and Driver License ID and send all the data to remote server, Otherwise driver is safe to go. (Alcohol level after testing is displayed on the device). Smart Breathalyzer device consists of an Arduino Mega board, a keypad, MQ3 alcohol sensor, LCD display, GSM/GPRS module and a switch. 
+
+A web app is also integrated to access, organize and analyse data in the remote database. Web App is accessible only for authorized officers and using web app police department can generate statistical reports, view recorded data etc.  
 
 ## Installation
 
