@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{{title}}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta http-equiv="refresh" content="5">
+
+
+    {{>head}}
+
+</head>
+<body class="hold-transition skin-blue-light sidebar-mini fixed" >
+
+  <div class="wrapper" >
+    {{>header}}
+
+    <div class="content-wrapper" style="background-color:white; ">
+
+        <section class="content-header">
+            <h1>
+
+              {{topic}}
+              <small><i class="fa {{sub_topic}}"></i></small>
+            </h1>
+
+        </section>
+      <!-- Start your project here-->
+        <section class="content container-fluid">
+
+            {{{body}}}
+        </section>
+
+
+   </div>
+{{>sidebar}}
+{{>footer}}
+
+</div>
+
+      {{>scripts}}
+</body>
+</html>

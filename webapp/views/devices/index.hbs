@@ -1,0 +1,82 @@
+
+
+  <form action="#" method="get">
+  <!-- Grid row -->
+    <div class="row">
+      <!-- Grid column -->
+
+
+      <div class="col-xs-3 pull-left" style="padding-top:12px;">
+
+          <a href="/devices/create" class="badge badge-success"><font size="3px";><i class="fa fa-plus"></i> Register Device</font></a>
+
+      </div>
+
+
+          <div class="col-xs-3 pull-right">
+          <!-- Default input -->
+
+            <input type="text" class="form-control" placeholder="&#xF002;" style="font-family: 'Helvetica', FontAwesome, sans-serif;">
+          </div>
+      <!-- Grid column -->
+    </div>
+  <!-- Grid row -->
+  </form>
+<!-- Default form grid -->
+
+<div class="row ">
+    <div class="col-xs-12" style="padding-top: 10px;">
+        <div class="box ">
+
+          <div class="box-body table-responsive" >
+                            <!--Table-->
+                    <table class="table table-hover" >
+                      <thead>
+                        <tr>
+                          <th>Device ID</th>
+                          <th>Police Station</th>
+                          <th>Actions</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+
+                        {{# each devices}}
+                          {{# each this}}
+
+                            <tr>
+
+
+                                <td>{{ this.device_id}}</td>
+                                <td>{{ this.police_station_id }}</td>
+                                <td>
+                                  <h5>
+
+                                    <a href="#!" class="badge badge-success">Edit</a>
+                                    <a
+                                      href="javascript:if(confirm('Do you really want to remove this device ?'))
+                                      {document.getElementById('elem{{this._id}}').submit();}" class="badge badge-warning">Remove
+                                    </a>
+                                      <form id="elem{{ this._id }}" action="/devices/delete/{{this._id}}" method="get">
+                                      </form>
+
+                                  </h5>
+
+                                </td>
+
+                            </tr>
+
+                          {{/each}}
+
+                        {{/each}}
+                      </tbody>
+
+                    </table>
+                    {{#if devices}}
+                    {{else}}
+                      <h1 class="text-center text-muted" style="opacity:0.4"><b>No Content</b></h1>
+                    {{/if}}
+                  </div>
+
+                </div>
+              </div>
+            </div>

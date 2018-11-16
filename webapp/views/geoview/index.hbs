@@ -1,0 +1,164 @@
+
+<div class="col-md-4">
+
+
+     <div class="" id="map-canvas"  style="width: 350px; height: 433px"></div>
+   </div>
+
+   <div class="col-md-8">
+
+
+     <div class="box ">
+
+       <div class="box-body table-responsive " >
+                         <!--Table-->
+                 <table class="table table-hover" >
+                   <thead>
+                     <tr>
+                       <th>Province</th>
+                       <th>Area Map</th>
+                       <th>Recorded Cases</th>
+                        <th>Drunken Cases</th>
+
+                     </tr>
+                   </thead>
+                   <tbody>
+
+                         <tr>
+                             <td>Central Province</td>
+                             <td><img src="/images/prov/CP.png" alt=""></td>
+                             <td>{{ province.CP}}</td>
+                             <td>{{ province.DCP}}</td>
+                         </tr>
+
+                         <tr>
+                             <td>Eastern Province</td>
+                             <td><img src="/images/prov/EP.png" alt=""></td>
+                             <td>{{ province.EP}}</td>
+                             <td>{{ province.DEP}}</td>
+                         </tr>
+                         <tr>
+                             <td>North Central Province</td>
+                             <td><img src="/images/prov/NC.png" alt=""></td>
+                             <td>{{ province.NC}}</td>
+                             <td>{{ province.DNC}}</td>
+                         </tr>
+                         <tr>
+                             <td>Northern Province</td>
+                             <td><img src="/images/prov/NP.png" alt=""></td>
+                             <td>{{ province.NP}}</td>
+                              <td>{{ province.DNP}}</td>
+                         </tr>
+                         <tr>
+                             <td>North Western Province</td>
+                             <td><img src="/images/prov/NW.png" alt=""></td>
+                             <td>{{ province.NW}}</td>
+                             <td>{{ province.DNW}}</td>
+                         </tr>
+                         <tr>
+                             <td>Sabaragamuwa Province</td>
+                             <td><img src="/images/prov/SG.png" alt=""></td>
+                             <td>{{ province.SG}}</td>
+                             <td>{{ province.DSG}}</td>
+                         </tr>
+                         <tr>
+                             <td>Southern Province</td>
+                             <td><img src="/images/prov/SP.png" alt=""></td>
+                             <td>{{ province.SP}}</td>
+                             <td>{{ province.DSP}}</td>
+                         </tr>
+                         <tr>
+                             <td>Uva Province</td>
+                             <td><img src="/images/prov/UP.png" alt=""></td>
+                             <td>{{ province.UP}}</td>
+                             <td>{{ province.DUP}}</td>
+                         </tr>
+                         <tr>
+                             <td>Western Province</td>
+                             <td><img src="/images/prov/WP.png" alt=""></td>
+                             <td>{{ province.WP}}</td>
+                             <td>{{ province.DWP}}</td>
+                         </tr>
+
+                   </tbody>
+                 </table>
+
+               </div>
+
+             </div>
+  </div>
+
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+<script>
+     function initAutocomplete() {
+       //
+
+       var myLatLng = {lat:7.2906, lng:80.6337};
+       var markers = [];
+
+       var map = new google.maps.Map(document.getElementById('map-canvas'), {
+         center: {lat:7.2906, lng:80.6337},
+         zoom: 7
+       });
+
+       {{# each cases}}
+         {{# each this}}
+
+         var lat = {{this.location.latitude}};
+         var lng = {{this.location.longitude}};
+
+         var marker = new google.maps.Marker({
+            position: {lat:lat,lng:lng},
+            map: map,
+            title: 'Vehicle Num :  {{this.vehicle_num}}\nAlcohol Level :  {{this.alco_level}}%'
+          });
+
+
+         {{/each}}
+      {{/each}}
+
+
+      //
+      //  google.charts.load('current', {
+      //   'packages':['geochart'],
+      //   // Note: you will need to get a mapsApiKey for your project.
+      //   // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
+      //   'mapsApiKey': 'AIzaSyDtTmBEx5nZpgrgv6pbHWXwi9ykUot6pfk'
+      // });
+      // google.charts.setOnLoadCallback(drawRegionsMap);
+
+      // function drawRegionsMap() {
+      //   var data = google.visualization.arrayToDataTable([
+      //     ['province','Data'],
+     	// 	   ['LK-1','45'],
+     	// 	    ['LK-2','150'],
+      //
+      //   ]);
+
+      //   var options = {
+      //
+      //   region: 'LK', // srilanka
+      //   displayMode: 'regions',
+      //   colorAxis: {colors: ['#00853f', 'black', '#e31b23']},
+      //   backgroundColor: '#81d4fa',
+      //   datalessRegionColor: '#f8bbd0',
+      //   defaultColor: '#f5f5f5',
+      //   resolution: 'provinces'
+      //
+      // };
+      //
+      //   var chart = new google.visualization.GeoChart(document.getElementById('map-canvas'));
+      //   chart.draw(data, options);
+      // };
+
+
+
+
+     }
+
+</script>
+
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDtTmBEx5nZpgrgv6pbHWXwi9ykUot6pfk&libraries=places&callback=initAutocomplete" async defer>
+</script>

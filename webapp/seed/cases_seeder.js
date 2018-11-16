@@ -1,6 +1,8 @@
 var Case = require('../models/filed_cases');
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/breathalyzer_db');
+
+var uri = 'mongodb://admin:12345@ds257848.mlab.com:57848/breathalyzer_db'
+mongoose.connect(uri);
 
 var cases = [
   new Case({

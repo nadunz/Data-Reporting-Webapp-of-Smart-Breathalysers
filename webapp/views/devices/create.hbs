@@ -1,0 +1,92 @@
+
+
+<div class="row">
+    <div class="col-md-6">
+
+        <div class="">
+            <div class="box-header with-border ">
+                <h3 class="box-title">Enter Informations</h3>
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            
+            <form role="form" id="data-form" method="post" action="/devices/create">
+
+                <div class="box-body">
+                    <div class="form-group">
+                        <label> Device ID:</label>
+                        <input type="text" class="form-control" id="name" required placeholder="Enter Divice ID" name="dev_id">
+                        <span class="help-block"></span>
+                    </div>
+                    <div class="form-group">
+                        <label> Police Station:</label>
+                        <input type="text" class="form-control" id="police-search" placeholder="Search......." name="police">
+                        <span class="help-block"></span>
+                    </div>
+                    <div class="box-footer">
+                          <button type="submit" class="btn btn-info">Register</button>
+                          <button type="reset" class="btn btn-warning">Clear</button>
+                    </div>
+
+
+
+                </div>
+                <!-- /.box-body -->
+            </form>
+            {{# if success}}
+            <div class="alert   green lighten-3" >
+              Device, <strong>{{device}}</strong> successfully registered.
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            {{else}}
+                  {{# if errors}}
+                    <div class="alert   orange lighten-4" >
+                      Device, <strong>{{device}}</strong> was already registered.
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                  {{/if}}
+            {{/if}}
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+      // This example adds a search box to a map, using the Google Place Autocomplete
+      // feature. People can enter geographical searches. The search box will return a
+      // pick list containing a mix of places and predicted search terms.
+
+      // This example requires the Places library. Include the libraries=places
+      // parameter when you first load the API. For example:
+      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+      // Create a map object and specify the DOM element for display.
+
+
+
+
+      function initAutocomplete() {
+
+        // var map = new google.maps.Map(document.getElementById('map-canvas'), {
+        //   center: {lat:7.2906, lng:80.6337},
+        //   zoom: 8,
+        //
+        //
+        // });
+
+          // Create the search box and link it to the UI element.
+          var input = document.getElementById('police-search');
+          var searchBox = new google.maps.places.SearchBox(input);
+
+      }
+
+</script>
+
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDtTmBEx5nZpgrgv6pbHWXwi9ykUot6pfk&libraries=places&callback=initAutocomplete" async defer>
+</script>

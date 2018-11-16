@@ -1,0 +1,223 @@
+
+<!--Main layout-->
+    <main>
+        <div class="container-fluid">
+            <!--Section: Modals-->
+            <div class="col-xs-4">
+                <!-- small box -->
+                <div class="small-box bg-green">
+                    <div class="inner">
+                        <h4><b>{{ cases_count }}</b></h4>
+
+                        <p>RECORDED CASES</p>
+                    </div>
+                    <div class="icon">
+                        <a href="" class="link-black">
+                          <i class="fa fa-folder-open" style="color:white"aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <a href="/cases" class="small-box-footer">Cases List <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+
+            <div class="col-xs-4">
+                <!-- small box -->
+                <div class="small-box bg-aqua">
+                    <div class="inner">
+                        <h4><b>{{ devices_count }}</b></h4>
+
+                        <p>REGISTERED DEVICES</p>
+                    </div>
+
+                    <div class="icon">
+
+                        <a href="/devices/create" class="link-black">
+
+                          <i class="fa fa-mobile" style="color:white"aria-hidden="true"></i></span>
+                        </a>
+                    </div>
+                    <a href="/devices" class="small-box-footer">Devices List <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+
+            <div class="col-xs-4">
+                <!-- small box -->
+                <div class="small-box bg-fuchsia">
+                    <div class="inner">
+                        <h4><b>ALL</b></h4>
+
+                        <p>PROVINCE WISE ANALYSIS</p>
+                    </div>
+
+                    <div class="icon">
+
+                        <a href="" class="link-black">
+
+                          <i class="fa fa-map-marker" style="color:white"aria-hidden="true"></i></span>
+                        </a>
+                    </div>
+                    <a href="/geo_analysis" class="small-box-footer">Geographic Report <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+
+
+            <!--<div class="col-xs-3">
+
+                <div class="small-box bg-light-blue">
+                    <div class="inner">
+                        <h4><b>ANUAL</b></h4>
+
+                        <p>STATISTICS</br>REPORT</p>
+                    </div>
+
+                    <div class="icon">
+
+                        <a href="" class="link-black">
+
+                          <i class="fa fa-line-chart" style="color:white"aria-hidden="true"></i></span>
+                        </a>
+                    </div>
+                    <a href="/devices" class="small-box-footer">Report <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>-->
+<div class="col-xs-5">
+  <div class="view py-4 gradient-card-header ">
+      <h5 class="mb-1 text-center" style="color:black"><b>Summary Of Alcohol Level</b></h5>
+  </div>
+             <section class="">
+                 <!--Grid row-->
+                 <div class="row">
+                   <div class="col-xs-12">
+
+                        <canvas id="doughnutChart" ></canvas>
+
+                   </div>
+                   <!--Grid column-->
+
+               </div>
+               <!--Grid row-->
+
+           </section>
+
+
+</div>
+
+<div class="col-xs-7">
+      <!--Section: Main panel-->
+      <!--Panel Header-->
+      <div class="view py-4 gradient-card-header">
+          <h5 class="mb-1 text-center" style="color:black"><b>Summary Of Recorded Cases</b></h5>
+      </div>
+                 <section class="">
+                     <!--Grid row-->
+                     <div class="row">
+
+                         <!--Grid column-->
+                        <!-- <div class="col-md-5">
+
+
+                             <!--/Panel Header-->
+
+                             <!--Panel content-->
+                              <!--<div class="card-body">
+
+
+                                 <div class="row">
+
+
+                                     <div class="col-md-6 mb-4">
+
+
+                                         <p class="lead">
+                                             <span class="badge info-color-dark p-2">Date range</span>
+                                         </p>
+                                         <select class="mdb-select colorful-select dropdown-info">
+                                             <option value="" disabled selected>Choose time period</option>
+                                             <option value="1">Today</option>
+                                             <option value="2">Yesterday</option>
+                                             <option value="3">Last 7 days</option>
+                                             <option value="3">Last 30 days</option>
+                                             <option value="3">Last week</option>
+                                             <option value="3">Last month</option>
+                                         </select>
+
+
+                                         <p class="lead my-4">
+                                             <span class="badge info-color-dark p-2">Custom date</span>
+                                         </p>
+                                         <div class="md-form">
+                                             <input placeholder="Selected date" type="text" id="from" class="form-control datepicker">
+                                             <label for="date-picker-example">From</label>
+                                         </div>
+                                         <div class="md-form">
+                                             <input placeholder="Selected date" type="text" id="to" class="form-control datepicker">
+                                             <label for="date-picker-example">To</label>
+                                         </div>
+
+                                     </div>
+
+
+                                     <div class="col-md-6 mb-4 text-center">
+
+
+                                         <p>Total sales:
+                                             <strong>2000$</strong>
+                                             <button type="button" class="btn btn-info btn-sm p-2" data-toggle="tooltip" data-placement="top" title="Total sales in the given period">
+                                                 <i class="fa fa-question"></i>
+                                             </button>
+                                         </p>
+                                         <p>Average sales:
+                                             <strong>100$</strong>
+                                             <button type="button" class="btn btn-info btn-sm p-2" data-toggle="tooltip" data-placement="top" title="Average daily sales in the given period">
+                                                 <i class="fa fa-question"></i>
+                                             </button>
+                                         </p>
+
+
+                                         <span class="min-chart my-4" id="chart-sales" data-percent="76">
+                                             <span class="percent"></span>
+                                         </span>
+                                         <h5>
+                                             <span class="badge green p-2">Change
+                                                 <i class="fa fa-arrow-circle-up ml-1"></i>
+                                             </span>
+                                             <button type="button" class="btn btn-info btn-sm p-2" data-toggle="tooltip" data-placement="top" title="Percentage change compared to the same period in the past">
+                                                 <i class="fa fa-question"></i>
+                                             </button>
+                                         </h5>
+
+                                     </div>
+
+
+                                 </div>
+
+
+                             </div>
+
+
+                         </div>
+                         <!--Grid column-->
+
+                         <!--Grid column-->
+                         <div class="col-xs-10">
+
+                              <canvas id="myChart" ></canvas>
+
+                         </div>
+                         <!--Grid column-->
+
+                     </div>
+                     <!--Grid row-->
+
+                 </section>
+
+                 <!--Section: Main panel-->
+
+             </div>
+
+             </div>
+
+    </main>
+
+
+    <!--Main layout-->

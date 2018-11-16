@@ -1,0 +1,103 @@
+
+
+  <form action="#" method="get">
+  <!-- Grid row -->
+    <div class="row">
+      <!-- Grid column -->
+
+          <div class="col-md-3 pull-right">
+          <!-- Default input -->
+
+            <input type="text" class="form-control" placeholder="&#xF002;" style="font-family: 'Helvetica', FontAwesome, sans-serif;">
+
+          </div>
+      <!-- Grid column -->
+    </div>
+  <!-- Grid row -->
+  </form>
+<!-- Default form grid -->
+
+
+<div class="row ">
+    <div class="col-xs-12" style="padding-top: 10px;">
+        <div class="box ">
+
+          <div class="box-body table-responsive " >
+                            <!--Table-->
+                    <table class="table table-hover" >
+                      <thead>
+                        <tr>
+                          <th>License ID</th>
+                          <th>Vehical Number</th>
+                          <th>Alcohol Level</th>
+                          <th>Device ID</th>
+                          <th>Location</th>
+                          <th>Date</th>
+                          <th>Status</th>
+
+                          <th>Mark As Filed</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {{# each cases}}
+                          {{# each this}}
+
+                            <tr>
+
+
+                                <td>{{ this.license_id}}</td>
+                                <td>{{ this.vehicle_num}}</td>
+                                <td>
+
+                                  <span id="alco" class="badge badge-pill light-blue" style="width:70px">{{this.alco_level}}%</span>
+                                  {{#gt this.alco_level 0.08}}
+                                    <span class="label label-pill orange" >Drunken</span>
+                                  {{/gt}}
+                                </td>
+                                <td>{{ this.device_id }}</td>
+                                <td>{{ this.location.place}}</td>
+                                <td>{{ this.current_date.year}}-{{ this.current_date.month}}-{{ this.current_date.date}}</td>
+
+                                <td>
+                                  {{#equal this.status 0}}
+                                    <span class="label label-pill red">NOT FILED</span>
+                                  {{else}}
+                                    <span class="label label-pill green">FILED</span>
+                                  {{/equal}}
+
+                                </td>
+                                <td>
+                                  <h5>
+                                    {{#gt this.alco_level 0.08}}
+                                    <a href="/cases/file/{{this._id}}" class="badge badge-success badge-sm"><i class="fa fa-check-square-o" aria-hidden="true"></i>
+                                    </a>
+                                    {{/gt}}
+                                  <!--  <a
+                                      href="javascript:if(confirm('Do you really want to delete this case ?'))
+                                      {document.getElementById('elem{{this._id}}').submit();}" class="badge badge-warning">Delete
+                                    </a>
+                                      <form id="elem{{ this._id }}" action="/cases/delete/{{this._id}}" method="get">
+                                      </form>-->
+
+                                  </h5>
+
+                                </td>
+
+                                </script>
+
+
+                            </tr>
+
+                          {{/each}}
+                        {{/each}}
+                      </tbody>
+                    </table>
+                    {{#if cases}}
+                    {{else}}
+                      <h1 class="text-center text-muted" style="opacity:0.4"><b>No Content</b></h1>
+                    {{/if}}
+                  </div>
+
+                </div>
+              </div>
+            </div>
